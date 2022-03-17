@@ -1,20 +1,28 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { ScrollView } from "react-native";
+import React, { useState, useEffect } from "react";
+import Card from "./components/Card";
+import Title from "./components/Title";
 
 export default function App() {
+  const [isLoading, setIsLoading] = useState(true);
+  const [cars, setCars] = useState([]);
+
+  const fetchData = async () => {
+    const response = await fetch("http://api-test.bhut.com.br:3000/api/cars");
+    const result = await response.json()
+    setCars(result)
+  };
+
+  useEffect(() => {
+    fetchData()
+  }, []);
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <ScrollView>
+      <Title />
+      {cars.map(car => (
+        <Card key={car._id} car={car} />
+      ))}
+    </ScrollView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
