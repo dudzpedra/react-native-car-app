@@ -1,28 +1,18 @@
-import { ScrollView } from "react-native";
 import React, { useState, useEffect } from "react";
-import Card from "./components/Card";
-import Title from "./components/Title";
+import HomeScreen from "./screens/HomeScreen";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import DetailsScreen from "./screens/DetailsScreen";
+
+const Stack = createNativeStackNavigator()
 
 export default function App() {
-  const [isLoading, setIsLoading] = useState(true);
-  const [cars, setCars] = useState([]);
-
-  const fetchData = async () => {
-    const response = await fetch("http://api-test.bhut.com.br:3000/api/cars");
-    const result = await response.json()
-    setCars(result)
-  };
-
-  useEffect(() => {
-    fetchData()
-  }, []);
-
   return (
-    <ScrollView>
-      <Title />
-      {cars.map(car => (
-        <Card key={car._id} car={car} />
-      ))}
-    </ScrollView>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={HomeScreen} options={{ title: 'Home' }}/>
+        <Stack.Screen name="Details" component={DetailsScreen} options={{ title: 'Detalhes' }} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
