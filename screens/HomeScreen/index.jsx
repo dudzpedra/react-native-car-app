@@ -1,45 +1,34 @@
-import React, { useState, useEffect } from "react";
-import { ScrollView, ActivityIndicator } from "react-native";
-import Card from "../../components/Card";
-import Title from "../../components/Title";
 import styledComponents from "styled-components";
+import TheButton from "../../components/TheButton";
+import CarouselCards from "../../components/Carousel/CarouselCards";
+import Header from "../../components/Header";
 
 const HomeView = styledComponents.View`
-    background-color: #46bfeb
+    background-color: papayawhip
     height: 100%
 `;
 
+const MainView = styledComponents.View`
+  width: 80%
+  margin: 0 auto
+`;
+
+const ButtonView = styledComponents.View`
+  width: 60%
+  margin: 0 auto
+`;
+
 const HomeScreen = ({ navigation }) => {
-  const [isLoading, setIsLoading] = useState(true);
-  const [cars, setCars] = useState([]);
-
-  const fetchData = async () => {
-    const response = await fetch("http://api-test.bhut.com.br:3000/api/cars");
-    const result = await response.json();
-    setCars(result);
-    setIsLoading(false)
-  };
-
-  useEffect(() => {
-    fetchData();
-  }, []);
-
-  //const renderCar = (car) => <Card key={car._id} car={car} navigation={navigation} />
-
   return (
-    <ScrollView>
-      {isLoading ? (
-        <ActivityIndicator />
-      ) : (
-        <HomeView>
-          <Title />
-          {/* <FlatList data={cars} renderItem={renderCar}/> */}
-          {cars.map((car) => (
-            <Card key={car._id} car={car} navigation={navigation} />
-          ))}
-        </HomeView>
-      )}
-    </ScrollView>
+    <HomeView>
+      <Header />
+      <MainView>
+        <CarouselCards />
+        <ButtonView>
+          <TheButton navigation={navigation} text="See All Cars" path="All" />
+        </ButtonView>
+      </MainView>
+    </HomeView>
   );
 };
 

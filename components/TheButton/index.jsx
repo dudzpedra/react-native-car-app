@@ -1,12 +1,12 @@
-import { Button, Alert } from "react-native";
+import { Button } from "react-native";
 
-const TheButton = ({ car, text, navigation }) => {
+const TheButton = ({ car, text, navigation, path }) => {
   return (
     <Button
       title={text}
       color="#ac8cdb"
-      accessibilityLabel="Ver detalhes"
-      onPress={() => navigation.navigate("Details", { car })}
+      accessibilityLabel={'go to ' + path}
+      onPress={() => navigation.navigate(path, { car })}
     />
   );
 };

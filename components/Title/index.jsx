@@ -9,7 +9,7 @@ const TitleView = styledComponents.View`
 const TextView = styledComponents.Text`
     font-size: 32px
     text-align: center
-    color: #fff
+    color: #ac8cdb
 `;
 
 const Title = () => {

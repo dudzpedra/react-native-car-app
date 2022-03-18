@@ -1,4 +1,3 @@
-import { Text } from "react-native";
 import styledComponents from "styled-components";
 import Avatar from "../Avatar";
 import TheButton from "../TheButton";
@@ -7,7 +6,7 @@ const CardView = styledComponents.View`
     background-color: papayawhip;
     padding: 5%
     width: 80%
-    border: 1px solid #ac8cdb
+    border: 2px solid purple
     margin: 2% auto
     border-radius: 24px
 `;
@@ -31,7 +30,7 @@ const Card = ({ car, navigation }) => {
         <Avatar />
         <TextView>{car.title}, {car.age}</TextView>
       </HeaderView>
-      <TheButton text='Detalhes' navigation={navigation} car={car}/>
+      <TheButton text='Details' navigation={navigation} car={car} path="Details"/>
     </CardView>
   );
 };
