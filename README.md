@@ -8,7 +8,7 @@ A React Native app with Expo CLI, API consuming and Styled Components.
 - run `npm start`
 - download and open the Expo Go app and scan the QR code
 
-##Screenshots
+## Screenshots
 
 ![Screenshot_20220318-184251_Expo Go](https://user-images.githubusercontent.com/8992689/159086943-3e190cde-e490-4f34-af13-4889528e1d72.jpg)
 ![Screenshot_20220318-184305_Expo Go](https://user-images.githubusercontent.com/8992689/159086965-caa1f816-e383-4eb5-be4e-b7cd49ef3cf4.jpg)
