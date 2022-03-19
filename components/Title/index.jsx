@@ -1,4 +1,3 @@
-import { Text } from "react-native";
 import styledComponents from "styled-components";
 
 const TitleView = styledComponents.View`

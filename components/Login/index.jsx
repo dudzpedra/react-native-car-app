@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Button } from "react-native";
 import styledComponents from "styled-components";
 import { useAuth } from "../../contexts/auth";
-import TheButton from "../TheButton";
 
 const LoginView = styledComponents.View`
     width: 80%
@@ -16,7 +15,7 @@ const InputView = styledComponents.TextInput`
     padding: 0 2%
 `;
 
-const Login = ({ navigation }) => {
+const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 

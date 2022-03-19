@@ -6,8 +6,10 @@ const AvatarImage = styledComponents.Image`
     margin: 0 2%
 `
 
+const imgUri = { uri: 'https://cdn4.iconfinder.com/data/icons/car-42/512/car_0002-512.png' }
+
 const Avatar = () => {
-    return <AvatarImage source={{ uri: 'https://cdn4.iconfinder.com/data/icons/car-42/512/car_0002-512.png' }} />
+    return <AvatarImage source={imgUri} />
 }
 
 export default Avatar

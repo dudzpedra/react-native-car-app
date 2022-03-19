@@ -23,7 +23,7 @@ const CarDetails = styledComponents.View`
     padding: 2%
 `;
 
-const DetailsScreen = ({ navigation, route }) => {
+const DetailsScreen = ({ route }) => {
   return (
     <DetailsView>
       <ImageBackground source={img} resizeMode="cover" style={{ opacity: 0.7 }}>

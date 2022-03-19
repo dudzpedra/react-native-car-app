@@ -1,4 +1,3 @@
-import { Text } from 'react-native'
 import styledComponents from 'styled-components'
 import MyGithub from '../MyGithub'
 

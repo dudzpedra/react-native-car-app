@@ -1,6 +1,6 @@
 import { Text } from 'react-native'
 const BlankList = () => {
-    return <Text>Nenhum carro foi encontrado</Text>
+    return <Text>No cars available at this moment.</Text>
 }
 
 export default BlankList
