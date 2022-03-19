@@ -1,5 +1,9 @@
-# react-native-car-app
-A React Native app with Expo CLI, API consuming and Styled Components.
+# React Native Car App
+- React Native and Expo CLI
+- API data fetching
+- Context API
+- Sign in with Authentication and Validation
+- External library [react-native-snap-carousel](https://github.com/meliorence/react-native-snap-carousel)
 
 ## How to use
 - clone the project
