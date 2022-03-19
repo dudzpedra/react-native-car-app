@@ -1,6 +1,7 @@
 # React Native Car App
 ## Features
 - React Native and Expo CLI
+- Styled Components
 - API data fetching
 - Context API
 - Sign in with Authentication and Validation
