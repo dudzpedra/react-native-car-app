@@ -1,26 +1,26 @@
 import styledComponents from "styled-components";
-import { View, Dimensions, Text } from 'react-native'
-
-/* export const SLIDER_WIDTH = Dimensions.get('window').width + 80
-export const ITEM_WIDTH = Math.round(SLIDER_WIDTH * 0.7) */
+import { View } from 'react-native'
 
 const ImageView = styledComponents.Image`
-  width: 300px
+  width: 350px
   height: 300px
-  margin: 5% auto
+  margin: 4% auto
   border-radius: 8px
 `
 
 const CarTitle = styledComponents.Text`
   text-align: center
+  font-size: 18px
+  color: purple
 `
 
 const CarouselItem = ({ item }) => {
 
       return (
           <View key={item.id}>
-              <ImageView source={{ uri: item.imgUrl }} />
               <CarTitle>{item.title}</CarTitle>
+              <ImageView source={{ uri: item.imgUrl }} />
+              <CarTitle>{item.description}</CarTitle>
           </View>
       )
 }

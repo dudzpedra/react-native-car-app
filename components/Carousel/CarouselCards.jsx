@@ -8,8 +8,7 @@ import styledComponents from "styled-components";
 const CarouselView = styledComponents.View`
   width: 100%
   align-items: center
-  margin: 5% auto
-  padding: 2%
+  margin: 1% auto
 `
 
 const CarouselCards = () => {
@@ -23,8 +22,8 @@ const CarouselCards = () => {
         layout="default"
         useScrollView={true}
         inactiveSlideShift={0}
-        sliderWidth={300}
-        itemWidth={300}
+        sliderWidth={350}
+        itemWidth={350}
       />
     </CarouselView>
   );

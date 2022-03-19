@@ -2,14 +2,9 @@ import styledComponents from "styled-components";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import Login from "../../components/Login";
-import TheButton from "../../components/TheButton";
+import { ImageBackground } from "react-native";
 
-const WelcomeView = styledComponents.View`
-    padding: 2%
-    align-items: center
-    background-color: papayawhip
-    height: 100%
-`;
+const img = { uri: 'https://images.pexels.com/photos/1644794/pexels-photo-1644794.jpeg' }
 
 const WelcomeTitle = styledComponents.Text`
     font-size: 26px
@@ -20,19 +15,17 @@ const Instructions = styledComponents.Text`
     font-size: 20px
     padding: 1%
     margin: 1% auto
-`
+`;
 
 const WelcomeScreen = ({ navigation }) => {
   return (
-    <WelcomeView>
-      <Header />
-      <WelcomeTitle>Welcome to the Cars App!</WelcomeTitle>
-      <Instructions>Please login:</Instructions>
-      <Login navigation={navigation} />
-      <Instructions>OR</Instructions>
-      <TheButton navigation={navigation} path="Home" text="Enter as a Guest" />
-      <Footer />
-    </WelcomeView>
+      <ImageBackground source={img} resizeMode='cover' style={{ flex: 1, justifyContent: 'center', alignItems:'center', opacity: 0.7}}>  
+        <Header />
+        <WelcomeTitle>Welcome to the Cars App!</WelcomeTitle>
+        <Instructions>Please login:</Instructions>
+        <Login navigation={navigation} />
+        <Footer />
+      </ImageBackground>
   );
 };
 

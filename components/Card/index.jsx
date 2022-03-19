@@ -4,7 +4,7 @@ import TheButton from "../TheButton";
 
 const CardView = styledComponents.View`
     background-color: papayawhip;
-    padding: 5%
+    padding: 4%
     width: 80%
     border: 2px solid purple
     margin: 2% auto
@@ -15,12 +15,13 @@ const HeaderView = styledComponents.View`
     display: flex
     flex-direction: row
     align-items: center
+    justify-content: space-between
     margin: 5%
-    max-width: 40%
+    max-width: 100%
 `;
 
 const TextView = styledComponents.Text`
-    margin: 2%
+    margin: 2% 20%
 `
 
 const Card = ({ car, navigation }) => {

@@ -1,16 +1,13 @@
-import { Image, StyleSheet } from 'react-native'
+import styledComponents from "styled-components"
 
-const Avatar = ({ size }) => {
-    return <Image source={{ uri: 'https://reactnative.dev/img/tiny_logo.png' }} style={styles.avatar} />
+const AvatarImage = styledComponents.Image`
+    width: 80px
+    height: 80px
+    margin: 0 2%
+`
+
+const Avatar = () => {
+    return <AvatarImage source={{ uri: 'https://cdn4.iconfinder.com/data/icons/car-42/512/car_0002-512.png' }} />
 }
-
-const styles = StyleSheet.create({
-    avatar: {
-        width: 100,
-        height: 100,
-        borderRadius: 100,
-        marginHorizontal: 5
-    },
-})
 
 export default Avatar

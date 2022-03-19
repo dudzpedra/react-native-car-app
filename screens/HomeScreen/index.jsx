@@ -1,14 +1,13 @@
 import styledComponents from "styled-components";
-import { Button } from 'react-native'
+import { Button, ImageBackground } from "react-native";
 import TheButton from "../../components/TheButton";
 import CarouselCards from "../../components/Carousel/CarouselCards";
 import Header from "../../components/Header";
 import { useAuth } from "../../contexts/auth";
 
-const HomeView = styledComponents.View`
-    background-color: papayawhip
-    height: 100%
-`;
+const img = {
+  uri: "https://images.pexels.com/photos/1644794/pexels-photo-1644794.jpeg",
+};
 
 const MainView = styledComponents.View`
   width: 80%
@@ -16,28 +15,37 @@ const MainView = styledComponents.View`
 `;
 
 const ButtonView = styledComponents.View`
-  width: 60%
+  width: 40%
   margin: 2% auto
 `;
 
 const HomeScreen = ({ navigation }) => {
-  const { signOut } = useAuth()
+  const { signOut } = useAuth();
 
-  const handleSignOut = () => signOut()
-  
+  const handleSignOut = () => signOut();
+
   return (
-    <HomeView>
+    <ImageBackground
+      source={img}
+      resizeMode="cover"
+      style={{
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center",
+        opacity: 0.7,
+      }}
+    >
       <Header />
       <MainView>
         <CarouselCards />
-        <ButtonView>
-          <TheButton navigation={navigation} text="See All Cars" path="All" />
-        </ButtonView>
       </MainView>
       <ButtonView>
-        <Button title="SignOut" color='purple' onPress={handleSignOut} />
+        <TheButton navigation={navigation} text="See All Cars" path="All" />
       </ButtonView>
-    </HomeView>
+      <ButtonView>
+        <Button title="SignOut" color="purple" onPress={handleSignOut} />
+      </ButtonView>
+    </ImageBackground>
   );
 };
 

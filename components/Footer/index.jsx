@@ -10,10 +10,14 @@ const FooterView = styledComponents.View`
     margin: 5% auto
 `
 
+const FooterText = styledComponents.Text`
+    color: white
+`
+
 const Footer = () => {
     return (
         <FooterView>
-            <Text>Designed and Developed by{' '}</Text>
+            <FooterText>Designed and Developed by{' '}</FooterText>
             <MyGithub />
         </FooterView>
     )
