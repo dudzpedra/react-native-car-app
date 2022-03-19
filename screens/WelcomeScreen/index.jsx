@@ -3,6 +3,7 @@ import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import Login from "../../components/Login";
 import TheButton from "../../components/TheButton";
+import { useAuth } from "../../contexts/auth";
 
 const WelcomeView = styledComponents.View`
     padding: 2%
@@ -23,6 +24,8 @@ const Instructions = styledComponents.Text`
 `
 
 const WelcomeScreen = ({ navigation }) => {
+  const { signed } = useAuth()
+  console.log(signed)
   return (
     <WelcomeView>
       <Header />
