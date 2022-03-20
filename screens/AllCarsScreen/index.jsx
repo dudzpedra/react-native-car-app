@@ -4,6 +4,7 @@ import styledComponents from "styled-components";
 import Card from "../../components/Card";
 import BlankList from "../../components/BlankList";
 import Header from "../../components/Header";
+import api from "../../services/api";
 
 const img = { uri: 'https://images.pexels.com/photos/1644794/pexels-photo-1644794.jpeg' }
 
@@ -24,9 +25,7 @@ const AllCarsScreen = ({ navigation }) => {
   const [cars, setCars] = useState([]);
 
   const fetchData = async () => {
-    const response = await fetch("http://api-test.bhut.com.br:3000/api/cars");
-    const result = await response.json();
-    setCars(result);
+    await api.get('/').then(result => setCars(result.data)).catch(error => console.error(error))
     setIsLoading(false);
   };
 
